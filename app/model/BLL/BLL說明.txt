@@ -1,0 +1,36 @@
+BLL說明：為業務邏輯層。（程序導向 開發較快速 缺點Bug多）
+此資料夾內行爲面向「程式行為」，提供單一類型功能處理，搭配資料，供控制器使用。
+
+面向單一功能，需使用多種功能請在Controller中搭配使用。
+
+當需要登入時，提供登入方法。
+當需要寫入cookie時，提供寫入cookie方法。
+
+//依照方法做分類。
+
+與DAL數據層的關係：
+    依照數據設計業務邏輯，從DAL讀取完整數據，操作存放數據，供Model操作。
+
+//參考
+class NameBLL  extends Business{
+    //log執行紀錄檔
+    private $nameLog = LOGROOT.'BLL/nameLog.log';
+    private $nameLogFail = LOGROOT.'BLL/nameLogFail.log';
+    
+    //物件
+    private $object;
+    //變數
+    private $variable;
+    
+    public function __construct(){
+        //初始化方法
+        //示範：添加資料處理層：$this->DataAccess('name');//資料處理層class名稱
+    }
+    public function __destruct(){
+        //摧毀時執行
+    }
+    //提供各種功能
+
+    //私有方法
+
+}

@@ -1,0 +1,61 @@
+DAL說明：（物件導向 ？）
+繼承(為實作，還不確定需不需要)：libraries內DAL有基本預防SQL注入方法，確保資料庫安全。
+
+此資料夾內行為面向資料庫，提供單筆或多筆資料操作，為商務邏輯與資料庫對話的橋樑。
+另外私有方法提供「數據生成」行為。
+
+當需要利用某資料去資料庫撈資料時，建立 set方法 與 select方
+
+//資料操作：僅提供單一資料操作。
+//設定set：包含預防注入與格式確認功能。
+//取得get
+
+//資料庫操作：提供各種撈取資料庫功能。
+//SELECT搜尋(read)：搜尋一次撈取整筆資料，減少資料庫搜尋次數。
+//INSERT插入(write)：插入後建議讀取一次避免當前資料不正確。
+//UPDATE更新(change)
+//DELETE刪除(drop)
+
+//私有方法：提供此類別私有方法。
+//格式確認的方法
+
+
+class nameDAL{
+    //log執行紀錄檔
+    private $nameLog = LOGROOT.'DAL/nameLog.log';
+    private $nameLogFail = LOGROOT.'DAL/nameLogFail.log';
+    //物件
+    private $object;
+    //變數
+    private $variable;
+
+    public function __construct(){
+        //初始化方法
+        //示範添加資料庫：$this->Database();//參數空著就好，預設會使用常數。也可其他資料庫名稱。
+    }
+    public function __destruct(){
+        //摧毀時執行
+    }
+
+    //設定Set(欲寫入變數)
+
+    //取得get(讀取後取得各種變數)
+
+    //內部功能
+    
+    //資料庫系列（DB）
+    //讀取read
+
+    //更新update
+
+    //新增added
+
+    //刪除delete
+
+    //變數轉換make：轉換資料成儲存的樣式
+
+    //檢查重複(Public)checkOverlapped
+
+    //檢查格式是否正確(確保格式安全可靠)(Private)check
+    
+}
